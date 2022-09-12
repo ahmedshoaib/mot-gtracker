@@ -1,0 +1,225 @@
+Script started on Thu 25 Aug 2022 15:58:42 BST
+]0;sxa1507@cca-lg04-031:sxa1507[sxa1507@cca-lg04-031 sxa1507]$ exitpython main.py[33Gls[Kpython main.py
+python: can't open file 'main.py': [Errno 2] No such file or directory
+]0;sxa1507@cca-lg04-031:sxa1507[sxa1507@cca-lg04-031 sxa1507]$ cd code/
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ ls
+[0m[38;5;27mbaseline_results[0m  detection.py  [38;5;27mgtracker_results[0m  [38;5;27mmodels[0m      [38;5;27m__pycache__[0m  tracker_graph.py  yolov5m.pt
+[38;5;27mdata[0m              eval.py       main.py           monitor.py  reid.py      tracker.py
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ lscd code/[30Gpython main.py
+processes starting
+waiting on det
+...................monitor started True
+The current device is cuda:0
+The current device is cuda:0
+Model: osnet_ibn_x1_0
+- params: 2,194,640
+- flops: 978,878,352
+Using cache found in /home/students/sxa1507/.cache/torch/hub/ultralytics_yolov5_master
+Python 3.7.0 required by YOLOv5, but Python 3.6.12 is currently installed
+YOLOv5 🚀 2022-8-4 Python-3.6.12 torch-1.10.1+cu102 CUDA:0 (GeForce RTX 2060, 5935MiB)
+
+Successfully loaded pretrained weights from "./models/reid/osnet_ibn_ms_d_c.pth.tar"
+** The following layers are discarded due to unmatched keys or layer size: ['classifier.weight', 'classifier.bias']
+Fusing layers... 
+YOLOv5m summary: 290 layers, 21172173 parameters, 0 gradients
+Adding AutoShape... 
+det:model init done
+det:waiting on main
+putting on det
+start_time: 1661439557.0304947
+main:Sent video to det
+det: recv video ./data/MOT20-01
+
+Stats of frame: 200
+Number of Tracks 30
+cpu :  15.7
+memory % used: 52.2
+time from last out:  14.12813949584961
+time from start:  14.128146886825562
+det:waiting on main
+
+Stats of frame: 400
+Number of Tracks 34
+cpu :  28.7
+memory % used: 55.4
+time from last out:  15.597686767578125
+time from start:  29.725844860076904
+frame eval time: 0.001863718032836914
+     num_frames      mota      motp
+acc         428  0.501164  0.207985
+Stats for video:  MOT20-01
+      IDF1   IDP   IDR  Rcll  Prcn GT MT PT ML   FP   FN IDs   FM  MOTA  MOTP IDt IDa IDm
+full 55.4% 58.1% 53.0% 71.0% 77.9% 67 33 16 18 1821 2619  61  193 50.1% 0.208  75   6  27
+part 68.5% 67.6% 69.4% 69.4% 67.6% 18 12  1  5   12   11   0    0 36.1% 0.191   0   0   0
+End time: 31.820249319076538
+waiting on det
+putting on det
+start_time: 1661439608.8698435
+main:Sent video to det
+det: recv video ./data/MOT17-04-SDP
+
+Stats of frame: 200
+Number of Tracks 29
+cpu :  15.0
+memory % used: 54.8
+time from last out:  15.281516313552856
+time from start:  15.281528234481812
+
+Stats of frame: 400
+Number of Tracks 32
+cpu :  29.7
+memory % used: 61.6
+time from last out:  18.213353633880615
+time from start:  33.494911432266235
+frame eval time: 0.0020623207092285156
+det:waiting on main
+
+Stats of frame: 600
+Number of Tracks 35
+cpu :  29.4
+memory % used: 69.0
+time from last out:  19.800925254821777
+time from start:  53.29584836959839
+
+Stats of frame: 800
+Number of Tracks 35
+cpu :  23.5
+memory % used: 69.0
+time from last out:  12.741148471832275
+time from start:  66.03700852394104
+frame eval time: 0.0019366741180419922
+
+Stats of frame: 1000
+Number of Tracks 36
+cpu :  23.2
+memory % used: 69.1
+time from last out:  13.245396137237549
+time from start:  79.2824318408966
+     num_frames      mota      motp
+acc        1049  0.576374  0.171452
+Stats for video:  MOT17-04-SDP
+      IDF1   IDP   IDR  Rcll  Prcn GT MT PT ML   FP   FN IDs   FM  MOTA  MOTP IDt IDa IDm
+full 62.6% 73.1% 54.8% 66.4% 88.5% 65 31 18 16 2490 9713  33  453 57.6% 0.171  40   7  25
+part 75.3% 81.4% 70.0% 70.0% 81.4% 25 17  1  7    8   15   0    0 54.0% 0.160   0   0   0
+End time: 82.97283220291138
+waiting on det
+putting on det
+start_time: 1661439711.862896
+main:Sent video to det
+det: recv video ./data/MOT20-02
+
+Stats of frame: 200
+Number of Tracks 29
+cpu :  15.2
+memory % used: 53.9
+time from last out:  14.805214881896973
+time from start:  14.805221557617188
+
+Stats of frame: 400
+Number of Tracks 34
+cpu :  30.4
+memory % used: 57.9
+time from last out:  16.511252403259277
+time from start:  31.316486120224
+frame eval time: 0.0018277168273925781
+
+Stats of frame: 600
+Number of Tracks 37
+cpu :  31.6
+memory % used: 60.4
+time from last out:  14.113314628601074
+time from start:  45.42981243133545
+
+Stats of frame: 800
+Number of Tracks 36
+cpu :  30.4
+memory % used: 63.1
+time from last out:  14.316184043884277
+time from start:  59.746007680892944
+frame eval time: 0.003172159194946289
+
+Stats of frame: 1000
+Number of Tracks 38
+cpu :  29.6
+memory % used: 66.4
+time from last out:  15.847418785095215
+time from start:  75.59343767166138
+
+Stats of frame: 1200
+Number of Tracks 43
+cpu :  29.2
+memory % used: 73.9
+time from last out:  20.194047451019287
+time from start:  95.78752064704895
+frame eval time: 0.0028700828552246094
+
+Stats of frame: 1400
+Number of Tracks 43
+cpu :  28.9
+memory % used: 81.3
+time from last out:  20.285985946655273
+time from start:  116.07353329658508
+
+Stats of frame: 1600
+Number of Tracks 40
+cpu :  29.9
+memory % used: 88.6
+time from last out:  19.319969415664673
+time from start:  135.39352989196777
+frame eval time: 0.001888275146484375
+det:waiting on main
+
+Stats of frame: 1800
+Number of Tracks 38
+cpu :  29.4
+memory % used: 90.9
+time from last out:  14.618849277496338
+time from start:  150.0123908519745
+
+Stats of frame: 2000
+Number of Tracks 36
+cpu :  25.2
+memory % used: 91.0
+time from last out:  15.373291015625
+time from start:  165.38569331169128
+frame eval time: 0.0018956661224365234
+
+Stats of frame: 2200
+Number of Tracks 40
+cpu :  25.4
+memory % used: 91.0
+time from last out:  14.337661266326904
+time from start:  179.72336626052856
+
+Stats of frame: 2400
+Number of Tracks 41
+cpu :  22.3
+memory % used: 91.1
+time from last out:  15.851712465286255
+time from start:  195.57510495185852
+frame eval time: 0.0019464492797851562
+
+Stats of frame: 2600
+Number of Tracks 40
+cpu :  22.1
+memory % used: 91.2
+time from last out:  16.04181694984436
+time from start:  211.616934299469
+     num_frames      mota     motp
+acc        2781  0.461094  0.19794
+Stats for video:  MOT20-02
+      IDF1   IDP   IDR  Rcll  Prcn  GT  MT  PT ML    FP    FN IDs    FM  MOTA  MOTP IDt IDa IDm
+full 32.5% 33.5% 31.5% 70.3% 74.7% 256 113 113 30 14070 17518 236  1031 46.1% 0.198 372  18 196
+part 85.7% 81.8% 90.0% 90.0% 81.8%  20  18   0  2     8     4   0     0 70.0% 0.194   0   0   0
+End time: 227.2960822582245
+closed det
+closed reid
+closed eval
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ ls
+[0m[38;5;27mbaseline_results[0m  [38;5;27mdata[0m          eval.py           main.py  [38;5;27mmodels[0m      [38;5;27mMOT17-04-SDP_out[0m  [38;5;27mMOT20-02_out[0m  reid.py           tracker.py
+[38;5;13mcpu.png[0m           detection.py  [38;5;27mgtracker_results[0m  [38;5;13mmem.png[0m  monitor.py  [38;5;27mMOT20-01_out[0m      [38;5;27m__pycache__[0m   tracker_graph.py  yolov5m.pt
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ mv *.png baseline_results/
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ exit
+exit
+
+Script done on Thu 25 Aug 2022 16:19:53 BST

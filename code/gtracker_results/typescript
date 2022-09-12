@@ -1,0 +1,225 @@
+Script started on Thu 25 Aug 2022 15:43:45 BST
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ ps aux | grep jupyter[30Gkill -9 29636[K[30Gcat python_setup.sh[31Gd ..[K[30Gls[Kdu -sh *[30Gkill -9 2473[30Ggit push -u origin master[34Gcommit -m 'Adds gtracker code w/ results'[34Gstatus[K[34Gadd * &[30Gvi .gitignore[30Ggit add *[K[34Gcheckout -- typescript_1[30Gexit[Kpython main.py
+processes starting
+waiting on det
+...................monitor started True
+The current device is cuda:0
+The current device is cuda:0
+Model: osnet_ibn_x1_0
+- params: 2,194,640
+- flops: 978,878,352
+Using cache found in /home/students/sxa1507/.cache/torch/hub/ultralytics_yolov5_master
+Python 3.7.0 required by YOLOv5, but Python 3.6.12 is currently installed
+YOLOv5 🚀 2022-8-4 Python-3.6.12 torch-1.10.1+cu102 CUDA:0 (GeForce RTX 2060, 5935MiB)
+
+Successfully loaded pretrained weights from "./models/reid/osnet_ibn_ms_d_c.pth.tar"
+** The following layers are discarded due to unmatched keys or layer size: ['classifier.weight', 'classifier.bias']
+Fusing layers... 
+YOLOv5m summary: 290 layers, 21172173 parameters, 0 gradients
+Adding AutoShape... 
+det:model init done
+det:waiting on main
+putting on det
+start_time: 1661438663.2834187
+main:Sent video to det
+det: recv video ./data/MOT20-01
+
+Stats of frame: 200
+Number of Tracks 21
+cpu :  14.8
+memory % used: 51.0
+time from last out:  13.651998519897461
+time from start:  13.652007818222046
+det:waiting on main
+
+Stats of frame: 400
+Number of Tracks 29
+cpu :  29.2
+memory % used: 54.3
+time from last out:  15.03835916519165
+time from start:  28.690380573272705
+frame eval time: 0.0018727779388427734
+     num_frames      mota      motp
+acc         428  0.495511  0.207992
+Stats for video:  MOT20-01
+      IDF1   IDP   IDR  Rcll  Prcn GT MT PT ML   FP   FN IDs   FM  MOTA  MOTP IDt IDa IDm
+full 47.8% 59.9% 45.7% 71.0% 77.9% 67 33 16 18 1821 2619 112  193 49.6% 0.208 336   8  35
+part 68.5% 67.6% 69.4% 69.4% 67.6% 18 12  1  5   12   11   0    0 36.1% 0.191   0   0   0
+End time: 30.710615634918213
+waiting on det
+putting on det
+start_time: 1661438714.0003095
+main:Sent video to det
+det: recv video ./data/MOT17-04-SDP
+
+Stats of frame: 200
+Number of Tracks 26
+cpu :  15.3
+memory % used: 55.9
+time from last out:  15.488988876342773
+time from start:  15.488998174667358
+
+Stats of frame: 400
+Number of Tracks 28
+cpu :  30.4
+memory % used: 61.1
+time from last out:  17.67124629020691
+time from start:  33.160261154174805
+frame eval time: 0.00191497802734375
+det:waiting on main
+Rebuilding graphs
+
+Stats of frame: 600
+Number of Tracks 28
+cpu :  29.3
+memory % used: 68.6
+time from last out:  19.928778171539307
+time from start:  53.089051485061646
+
+Stats of frame: 800
+Number of Tracks 32
+cpu :  26.3
+memory % used: 68.6
+time from last out:  11.887195348739624
+time from start:  64.9762589931488
+frame eval time: 0.002259492874145508
+
+Stats of frame: 1000
+Number of Tracks 34
+cpu :  26.4
+memory % used: 68.7
+time from last out:  12.184754133224487
+time from start:  77.16102480888367
+     num_frames      mota      motp
+acc        1049  0.574505  0.171455
+Stats for video:  MOT17-04-SDP
+      IDF1   IDP   IDR  Rcll  Prcn GT MT PT ML   FP   FN IDs   FM  MOTA  MOTP IDt IDa IDm
+full 49.3% 64.8% 43.1% 66.4% 88.5% 65 31 18 16 2490 9713  87  457 57.5% 0.171 462   8  30
+part 75.3% 81.4% 70.0% 70.0% 81.4% 25 17  1  7    8   15   0    0 54.0% 0.160   0   0   0
+End time: 80.52028059959412
+waiting on det
+putting on det
+start_time: 1661438814.5368714
+main:Sent video to det
+det: recv video ./data/MOT20-02
+
+Stats of frame: 200
+Number of Tracks 24
+cpu :  14.8
+memory % used: 52.8
+time from last out:  14.506423473358154
+time from start:  14.506431341171265
+
+Stats of frame: 400
+Number of Tracks 27
+cpu :  33.1
+memory % used: 57.4
+time from last out:  16.72191309928894
+time from start:  31.22835636138916
+frame eval time: 0.00205230712890625
+Rebuilding graphs
+
+Stats of frame: 600
+Number of Tracks 31
+cpu :  32.3
+memory % used: 59.5
+time from last out:  13.879987001419067
+time from start:  45.1083550453186
+
+Stats of frame: 800
+Number of Tracks 30
+cpu :  32.2
+memory % used: 61.3
+time from last out:  14.384270668029785
+time from start:  59.492637395858765
+frame eval time: 0.0020630359649658203
+
+Stats of frame: 1000
+Number of Tracks 32
+cpu :  30.7
+memory % used: 64.3
+time from last out:  15.321299076080322
+time from start:  74.81396341323853
+Rebuilding graphs
+
+Stats of frame: 1200
+Number of Tracks 39
+cpu :  29.5
+memory % used: 70.9
+time from last out:  18.54748558998108
+time from start:  93.3614764213562
+frame eval time: 0.002038717269897461
+
+Stats of frame: 1400
+Number of Tracks 42
+cpu :  29.6
+memory % used: 73.5
+time from last out:  17.120500564575195
+time from start:  110.48198962211609
+
+Stats of frame: 1600
+Number of Tracks 42
+cpu :  30.0
+memory % used: 74.9
+time from last out:  16.854618787765503
+time from start:  127.3366219997406
+frame eval time: 0.0018415451049804688
+Rebuilding graphs
+
+Stats of frame: 1800
+Number of Tracks 37
+cpu :  29.1
+memory % used: 76.0
+time from last out:  16.56004524230957
+time from start:  143.8966794013977
+
+Stats of frame: 2000
+Number of Tracks 39
+cpu :  30.3
+memory % used: 76.2
+time from last out:  14.756847620010376
+time from start:  158.65353870391846
+frame eval time: 0.0021233558654785156
+det:waiting on main
+
+Stats of frame: 2200
+Number of Tracks 44
+cpu :  29.5
+memory % used: 76.2
+time from last out:  14.168657779693604
+time from start:  172.82222294807434
+Rebuilding graphs
+
+Stats of frame: 2400
+Number of Tracks 40
+cpu :  23.4
+memory % used: 76.3
+time from last out:  16.418944120407104
+time from start:  189.2411961555481
+frame eval time: 0.002412557601928711
+
+Stats of frame: 2600
+Number of Tracks 57
+cpu :  24.5
+memory % used: 75.0
+time from last out:  14.033282995223999
+time from start:  203.2745087146759
+     num_frames      mota      motp
+acc        2781  0.454253  0.197943
+Stats for video:  MOT20-02
+      IDF1   IDP   IDR  Rcll  Prcn  GT  MT  PT ML    FP    FN IDs    FM  MOTA  MOTP  IDt IDa IDm
+full 25.4% 32.1% 24.6% 70.3% 74.7% 256 113 113 30 14070 17518 640  1032 45.4% 0.198 2302  59 199
+part 85.7% 81.8% 90.0% 90.0% 81.8%  20  18   0  2     8     4   0     0 70.0% 0.194    0   0   0
+End time: 217.43947410583496
+closed det
+closed reid
+closed eval
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ ls
+[0m[38;5;13mcpu.png[0m  [38;5;27mdata_b[0m        eval.py  [38;5;13mmem.png[0m  monitor.py        [38;5;27mMOT20-01_out[0m  [38;5;27m__pycache__[0m  tracker_graph.py  typescript    typescript_baseline
+[38;5;27mdata[0m     detection.py  main.py  [38;5;27mmodels[0m   [38;5;27mMOT17-04-SDP_out[0m  [38;5;27mMOT20-02_out[0m  reid.py      tracker.py        typescript_1  yolov5m.pt
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ mkdir gtracker_resukltslts[Klts
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ mv *.png gtracker_results/
+]0;sxa1507@cca-lg04-031:code[sxa1507@cca-lg04-031 code]$ exit
+exit
+
+Script done on Thu 25 Aug 2022 15:51:25 BST

@@ -1,0 +1,71 @@
+#!/bin/bash
+
+readonly KNOWN_HOSTS_FILE=ssh_031
+readonly MAX_CONCURRENT_USERS=3
+readonly MAX_ATTEMPTS=100
+readonly CONNECT_TIMEOUT=2
+readonly SSH_OPTS="-x \
+                   -o UserKnownHostsFile=${KNOWN_HOSTS_FILE} \
+                   -o ConnectTimeout=${CONNECT_TIMEOUT}"
+
+check_machine_load() {
+    local host=$1
+    local load=$(ssh -q ${SSH_OPTS} ${host} \
+                 "w \
+                 | tail -n +3 \
+                 | cut -d ' ' -f 1 \
+                 | sort -u \
+                 | grep -v ${USER} \
+                 | wc -l")
+    echo $load
+}
+
+check_machine_available() {
+    local host=$1
+    #ssh ${SSH_OPTS} -q $host exit
+    ping -q $host -c 1 -w 3 > /dev/null
+    echo $?
+}
+
+find_available_machine() {
+    local machines=($(cut -d ' ' -f 1 ${KNOWN_HOSTS_FILE} | cut -d ',' -f 1))
+    local count=${#machines[@]}
+    local host=
+    local attempts=0
+    while [[ $attempts -lt $MAX_ATTEMPTS ]]; do
+        local index=$((RANDOM % ${count}))
+        local candidate=${machines[index]}
+        if [[ $(check_machine_available $candidate) -ne 0 ]]; then
+            continue
+        fi
+        #local load=$(check_machine_load $candidate)
+        local load=0
+        if [[ $load -lt $MAX_CONCURRENT_USERS ]]; then
+            host=$candidate
+            break
+        fi
+        ((attempts++))
+    done
+    echo $host
+}
+
+ssh_to_machine() {
+    local host=$1
+    local args="${@:2}"
+    echo  ssh ${SSH_OPTS} ${host} -L 8888:${host}:9999  ${args}
+    exec ssh -4 ${SSH_OPTS} ${host} -L 8888:127.0.0.1:9999  ${args}
+}
+
+main() {
+    echo "Finding available lab machine..."
+    local host=$(find_available_machine)
+    if [[ -z $host ]]; then
+        echo "No suitable host could be found! Try again later."
+        return
+    fi
+    echo "Using lab machine '${host}'..."
+    ssh_to_machine $host "$@"
+}
+
+main "$@"
+
